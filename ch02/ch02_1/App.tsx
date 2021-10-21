@@ -1,115 +1,58 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
- *
- * @format
- */
+import React from 'react'
+import { SafeAreaView, Text } from 'react-native'
 
-import React from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+export default function App() {
+  /* Difference between React.createElement & JSX */ 
+  /* USING IF */
+  // const isLoading = true
+  // if (isLoading) {
+  //   return (
+  //     <SafeAreaView>
+  //       <Text>Loading...</Text>
+  //     </SafeAreaView>
+  //   )
+  // }
+  // return (
+  //   <SafeAreaView>
+  //     <Text>Hello JSC world!</Text>
+  //   </SafeAreaView>
+  // )
+  
+  /* SHORT CIRCULT EVALUATION */
+  // const isLoading = true
+  // return (
+  //   <SafeAreaView>
+  //     {isLoading && <Text>Loading...</Text>}
+  //     {!isLoading && <Text>Hello JSX world!</Text>}
+  //   </SafeAreaView>
+  // )
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+  /* Using variable */
+  // const isLoading = true
+  // const children = isLoading ? (
+  //   <Text>Loading...</Text>
+  // ) : (
+  //   <Text>Hello JSX World!</Text>
+  // )
+  // return <SafeAreaView>{children}</SafeAreaView>
 
-const Section: React.FC<{
-  title: string;
-}> = ({children, title}) => {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-};
+  // ARRAY
+  /* How can we improve code below? */ 
 
-const App = () => {
-  const isDarkMode = useColorScheme() === 'dark';
+  // const child = [
+  //   <Text>Hello World!</Text>,
+  //   <Text>Hello World!</Text>,
+  //   <Text>Hello World!</Text>
+  // ]
+  // return <SafeAreaView>{child}</SafeAreaView>
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
+  /* map method */
+  // const children = [1,2,3].map((i) => <Text>Hello World!{i}</Text>)
+  // return <SafeAreaView>{children, newComponent}</SafeAreaView>
+  
+  const newComponent = new Array(100)
+    .fill(null)
+    .map((notUsed, index) => <Text>Hello World!{index}</Text>)
 
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-};
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
-
-export default App;
+  return <SafeAreaView>{newComponent}</SafeAreaView>
+}
