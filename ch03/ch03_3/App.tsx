@@ -1,13 +1,16 @@
 import React from "react";
 //prettier-ignore
-import {StyleSheet, Platform, SafeAreaView, ImageBackground, Image, View, Text} from 'react-native'
+import {StyleSheet, Platform, SafeAreaView, ImageBackground, Image, View, Text, Alert} from 'react-native'
+import {Colors} from 'react-native-paper'
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import * as D from './src/data'
 
 const avatarUrl = D.randomAvatarUrl()
 const avatarSize = 50
-
 const text = 'Almost before we knew it, we had left the ground.'
+const onIconPressed = () => Alert.alert('icon pressed')
 
+// prettier-ignore
 export default function App(){
   return(
     <SafeAreaView style={[styles.flex]}>
@@ -21,6 +24,7 @@ export default function App(){
           <Text style={[styles.text, styles.semiBold]}>{text} [semi bold]</Text>
           <Text style={[styles.text, styles.bold]}>{text} [bold]</Text>
         </View>
+        <Icon name="home" size={50} color={Colors.lightBlue500} onPress={onIconPressed}/>
       </ImageBackground>
     </SafeAreaView>
   )
