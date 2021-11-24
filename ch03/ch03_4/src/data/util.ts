@@ -4,4 +4,4 @@ export const random = (min: number, max: number): number =>
 export const unsplashUrl = (width: number, height: number): string =>
     'https://source.unsplash.com/random/${width}x${height}'
 export const avartarUriByName = (name: string) =>
-    `https://ui-avartars.com/api/?name=${name.split(' ').join('+')}`
+    `https://ui-avatars.com/api/?name=${name.split(' ').join('+')}`
