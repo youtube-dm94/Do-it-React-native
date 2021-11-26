@@ -14,7 +14,7 @@ export default function Cache() {
     )
 
     return(
-        <View style={[styles.view]}>
+        <View style={[styles.view]}> 
             <Text style={[styles.text]}>{title}</Text>
             <FlatList
                 style={[styles.flatList]}
