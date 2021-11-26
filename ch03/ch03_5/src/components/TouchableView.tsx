@@ -3,7 +3,7 @@ import type {FC, ComponentProps} from 'react'
 import {TouchableOpacity, View} from 'react-native'
 import type {StyleProp, ViewStyle} from 'react-native'
 
-type TouchableViewProps = ComponentProps<typeof TouchableOpacity>
+type TouchableOpacityProps = ComponentProps<typeof TouchableOpacity>
 
 export type TouchableViewProps = TouchableOpacityProps & {
     viewStyle?: StyleProp<ViewStyle>

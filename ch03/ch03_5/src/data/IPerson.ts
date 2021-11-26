@@ -1,6 +1,6 @@
 type IPerson = {
     id: string
-    createDate: Date
+    createdDate: Date
     modifiedDate: Date
     name: string
     email: string
