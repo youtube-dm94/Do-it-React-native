@@ -3,13 +3,13 @@ import {StyleSheet, View, Text, ScrollView} from 'react-native'
 import { Colors } from "react-native-paper";
 import {Avatar} from '../components'
 import * as D from '../data'
+import {useToggle, useInterval} from '../hooks'
 
 type IdAndAvatar = Pick<D.IPerson, 'id' | 'avatar'>
 
 export default function Interval() {
     const [avatars, setAvatars] = useState<IdAndAvatar[]>([])
-    const [start, setStart] = useState(true)
-    const toggleStart = useCallback(() => setStart((start) => !start), [])
+    const [start, toggleStart] = useState(true)
     const clearAvatars = useCallback(() => setAvatars((notUsed) => []), [])
     useEffect(() => {
         const id = setInterval(() => {
