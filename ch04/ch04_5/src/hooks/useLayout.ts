@@ -3,7 +3,7 @@ import type { LayoutChangeEvent, LayoutRectangle } from "react-native";
 
 // prettier-ignore
 export const useLayout = (): [
-    LayoutReactangle, 
+    LayoutRectangle,
     (e: LayoutChangeEvent) => void
 ] => {
     const [layout, setLayout] = useState<LayoutRectangle>({
