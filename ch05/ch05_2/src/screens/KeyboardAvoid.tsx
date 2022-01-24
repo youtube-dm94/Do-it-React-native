@@ -4,7 +4,7 @@ import { useTheme } from "react-native-paper";
 import { useToggleTheme } from "../contexts";
 import * as D from '../data'
 
-export default function Input() {
+export default function KeyboardAvoid() {
     const [person, setPerson] = useState<D.IPerson>(D.createRandomPerson())
     const {dark, colors} = useTheme()
     const toggleTheme = useToggleTheme()
